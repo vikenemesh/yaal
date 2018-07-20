@@ -16,11 +16,12 @@
     }
 
     // Check continuously until the likebar is accessible
+    // Update: Keep doing it, youtube doesn't actually navigate when you click on something, it's all dynamic
     var interval = unsafeWindow.setInterval(()=>{
         var sentimentBar = unsafeWindow.document.getElementById('sentiment');
         if( sentimentBar ) {
             sentimentBar.setAttribute('activated_', true);
-            unsafeWindow.clearInterval(interval);
+            //unsafeWindow.clearInterval(interval);
             unsafeWindow.console.log("Over'n'out");
         }
     }, 500);
